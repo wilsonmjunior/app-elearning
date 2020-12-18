@@ -6,13 +6,19 @@ import Math from './images/Math.svg'
 
 import Header from './components/Header'
 import DeleteMessage from './components/DeleteMessage'
+import CardLesson from './components/CardLesson'
 
 const App = () => {
   console.warn(normalize(50))
   return (
-    <>
+    <View style={{ flex: 1, backgroundColor: '#F0EDF5' }}>
       <StatusBar barStyle="dark-content" />
-      <Header search />
+      {/* <Header search /> */}
+
+      <View style={{ marginTop: 50, marginLeft: 15, marginRight: 45, }}>
+        <CardLesson title="Introdução à teoria matemática" duration={50} />
+      </View>
+
       {/* <View style={{ flex: 1, backgroundColor: '#f0edf5', marginTop: -69, borderTopLeftRadius: 24, borderTopRightRadius: 24 }}>
       </View> */}
       {/* <View
@@ -34,7 +40,7 @@ const App = () => {
         <Math width={400} height={200} />
       </View> */}
 
-      <View
+      {/* <View
         style={{
           position: 'absolute',
           top: 0,
@@ -48,8 +54,8 @@ const App = () => {
         }}
       >
         <DeleteMessage />
-      </View>
-    </>
+      </View> */}
+    </View>
   )
 }
 
