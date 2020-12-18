@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@email.com",
+      "password": "12345"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "Matematica",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name": "Fisica",
+      "image": ""
+    },
+    {
+      "id": 3,
+      "name": "Quimica",
+      "image": ""
+    }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "name": "Introdução à teoria matemática",
+      "duration": 300,
+      "course_id": 1,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus condimentum gravida. Aenean condimentum vehicula sapien, eleifend metus congue vel. Suspendisse vitae tellus eu lacus facilisis auctor nec tristique eros.",
+      "video_id": "https://www.youtube.com/watch?v=4Bd3ek9iQE0"
+    }
+  ]
+}
