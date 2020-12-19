@@ -1,5 +1,12 @@
 import React from 'react'
+import { View, Text } from 'react-native'
 
-const Home = () => {}
+const Home = () => {
+  return (
+    <View>
+      <Text>Delta</Text>
+    </View>
+  )
+}
 
 export default Home
