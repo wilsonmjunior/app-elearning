@@ -6,7 +6,7 @@ import Feather from 'react-native-vector-icons/Feather'
 import { Container, HeaderContent, SearchInput, Title, Point } from './styles'
 
 interface HeaderProps {
-  search: boolean
+  search?: boolean
 }
 
 const Header = ({ search } : HeaderProps) => {

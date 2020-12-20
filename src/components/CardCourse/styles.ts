@@ -2,17 +2,27 @@ import styled from 'styled-components/native'
 import { rem } from '../../utils/responsive'
 
 export const Container = styled.View`
-  width: ${rem(156)};
-  height: ${rem(172)};
-  background: #509342;
+  width: ${rem(136)};
+  height: ${rem(152)};
+  background: #fff;
   border-radius: ${rem(20)};
 
-  align-items: center;
-  justify-content: center;
+  margin: 0 ${rem(4)} ${rem(8)} ${rem(4)};
+`
+
+export const Section = styled.View`
+  margin-top: ${rem(24)};
+  margin-left: ${rem(24)};
 `
 
 export const Text = styled.Text`
   font-size: ${rem(16)};
-  color: #fff;
+  color: #6C6C80;
   font-weight: bold;
+`
+
+export const Label = styled.Text`
+  font-size: ${rem(10)};
+  color: #C4C4D1;
+  margin-top: ${rem(4)};
 `
