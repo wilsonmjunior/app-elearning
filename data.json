@@ -5,6 +5,12 @@
       "name": "John Doe",
       "email": "johndoe@email.com",
       "password": "12345"
+    },
+    {
+      "name": "Wilson",
+      "email": "wilson@example.com",
+      "password": "pass123",
+      "id": 2
     }
   ],
   "courses": [
