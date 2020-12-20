@@ -1,9 +1,12 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
 
-import { Container, Text } from './styles'
+import Math from '../../images/Math.svg'
+import { Label } from '../CardLesson/styles'
 
-type CardProps = {
+import { Container, Section, Text } from './styles'
+
+interface CardProps {
   nameCourse: string
   numberClass: number
   isDelete?: boolean
@@ -12,8 +15,6 @@ type CardProps = {
 const CardCourse = ({ nameCourse, numberClass, isDelete }: CardProps) => {
   return (
     <Container>
-      <Text>{nameCourse}</Text>
-      <Text>{numberClass} aulas</Text>
       {
         isDelete && (
           <TouchableOpacity>
@@ -21,6 +22,14 @@ const CardCourse = ({ nameCourse, numberClass, isDelete }: CardProps) => {
           </TouchableOpacity>
         )
       }
+      <Section>
+        <Math />
+      </Section>
+
+      <Section>
+        <Text>{nameCourse}</Text>
+        <Label>{numberClass} aulas</Label>
+      </Section>
     </Container>
   )
 }
