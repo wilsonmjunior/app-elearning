@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Feather from 'react-native-vector-icons/Feather'
 
@@ -9,7 +9,7 @@ interface HeaderProps {
   search?: boolean
 }
 
-const Header = () => {
+const Header = ({ search }: HeaderProps) => {
   return (
     <Container>
       <HeaderContent>
@@ -28,9 +28,13 @@ const Header = () => {
         </TouchableOpacity>
       </HeaderContent>
 
-      <SearchInput placeholder="Busque um curso">
-        <Feather name="search" size={24} color="#C4C4D1" />
-      </SearchInput>
+      {
+        search && (
+          <SearchInput placeholder="Busque um curso">
+            <Feather name="search" size={24} color="#C4C4D1" />
+          </SearchInput>
+        )
+      }
     </Container>
   )
 }

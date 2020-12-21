@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <Container>
-      <Header />
+      <Header search />
 
       <Content>
         <HeaderContent>
