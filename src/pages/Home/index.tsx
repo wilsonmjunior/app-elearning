@@ -1,39 +1,16 @@
-import React, { useEffect, useState } from 'react'
-
-import api from '../../services/api'
+import React from 'react'
+import { ActivityIndicator } from 'react-native'
 
 import Header from '../../components/Header'
 import ListCourses, { Course } from '../../components/ListCourses'
 
-import { Container, Content, HeaderContent, Title, Label } from './styles'
-import { usePost } from '../../hooks/api'
-import { Text, TouchableOpacity } from 'react-native'
+import { useGet } from '../../hooks/api'
+import { normalize } from '../../utils/responsive'
 
-interface User {
-  name: string
-  email: string
-  password: string
-}
+import { Container, Content, HeaderContent, Title, Label } from './styles'
 
 const Home = () => {
-  const [courses, setCourses] = useState<Course[]>([])
-
-  const [result, error, loading, sendData] = usePost<User>({ url: 'users' })
-
-  const user = {
-    name: 'Wilson',
-    email: 'wilson@example.com',
-    password: 'pass123'
-  }
-
-  useEffect(() => {
-    async function load () {
-      const response = await api.get('courses')
-      setCourses(response.data)
-    }
-
-    load()
-  }, [])
+  const [data, loading] = useGet<Course>({ url: 'courses' })
 
   return (
     <Container>
@@ -44,9 +21,12 @@ const Home = () => {
           <Title>Categorias</Title>
           <Label>43 cursos</Label>
         </HeaderContent>
-        <TouchableOpacity onPress={() => sendData(user)}><Text>Delta</Text></TouchableOpacity>
 
-        <ListCourses courses={courses} />
+        {
+          !loading
+            ? <ListCourses courses={data} />
+            : <ActivityIndicator size="large" color="#6548A3" style={{ marginTop: normalize(100) }} />
+        }
       </Content>
     </Container>
   )
