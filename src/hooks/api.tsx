@@ -34,7 +34,7 @@ export function useGet<T> ({ url, skip }: Props): GetProps<T> {
       setLoading(true)
 
       api.get(url).then(response => {
-        if (canceled) {
+        if (!canceled) {
           setData(response.data)
           setLoading(false)
           setLoaded(true)
