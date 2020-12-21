@@ -9,7 +9,7 @@ interface HeaderProps {
   search?: boolean
 }
 
-const Header = ({ search } : HeaderProps) => {
+const Header = () => {
   return (
     <Container>
       <HeaderContent>
