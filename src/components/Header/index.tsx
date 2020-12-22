@@ -7,15 +7,18 @@ import { Container, HeaderContent, SearchInput, Title, Point } from './styles'
 
 interface HeaderProps {
   search?: boolean
+  back?: boolean
 }
 
-const Header = ({ search }: HeaderProps) => {
+const Header = ({ search, back }: HeaderProps) => {
   return (
     <Container>
       <HeaderContent>
-        <TouchableOpacity>
-          <Feather name="arrow-left" size={24} color="#FF6680" />
-        </TouchableOpacity>
+        {back && (
+          <TouchableOpacity>
+            <Feather name="arrow-left" size={24} color="#FF6680" />
+          </TouchableOpacity>
+        )}
 
         <View style={{ flexDirection: 'row' }}>
           <Title>e</Title>
@@ -28,13 +31,11 @@ const Header = ({ search }: HeaderProps) => {
         </TouchableOpacity>
       </HeaderContent>
 
-      {
-        search && (
-          <SearchInput placeholder="Busque um curso">
-            <Feather name="search" size={24} color="#C4C4D1" />
-          </SearchInput>
-        )
-      }
+      {search && (
+        <SearchInput placeholder="Busque um curso">
+          <Feather name="search" size={24} color="#C4C4D1" />
+        </SearchInput>
+      )}
     </Container>
   )
 }

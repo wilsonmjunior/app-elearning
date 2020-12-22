@@ -1,4 +1,6 @@
 import styled from 'styled-components/native'
+import { BorderlessButton } from 'react-native-gesture-handler'
+
 import { rem } from '../../utils/responsive'
 
 export const Container = styled.View`
@@ -8,6 +10,12 @@ export const Container = styled.View`
   border-radius: ${rem(20)};
 
   margin: 0 ${rem(4)} ${rem(8)} ${rem(4)};
+`
+
+export const DeleteButton = styled(BorderlessButton)`
+  position: absolute;
+  right: 15px;
+  top: 15px;
 `
 
 export const Section = styled.View`

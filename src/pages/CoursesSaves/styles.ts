@@ -19,8 +19,3 @@ export const HeaderContent = styled.View`
   align-items: center;
   justify-content: space-between;
 `
-
-export const Label = styled.Text`
-  font-size: ${rem(15)};
-  color: #A0A0B2;
-`
