@@ -3,11 +3,12 @@ import { ActivityIndicator } from 'react-native'
 
 import Header from '../../components/Header'
 import ListCourses, { Course } from '../../components/ListCourses'
+import Title from '../../components/Title'
 
 import { useGet } from '../../hooks/api'
 import { normalize } from '../../utils/responsive'
 
-import { Container, Content, HeaderContent, Title, Label } from './styles'
+import { Container, Content, HeaderContent, Label } from './styles'
 
 const Home = () => {
   const [data, loading] = useGet<Course>({ url: 'courses' })

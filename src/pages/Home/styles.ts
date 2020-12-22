@@ -20,11 +20,6 @@ export const HeaderContent = styled.View`
   justify-content: space-between;
 `
 
-export const Title = styled.Text`
-  font-size: ${rem(20)};
-  color: #3D3D4C;
-`
-
 export const Label = styled.Text`
   font-size: ${rem(15)};
   color: #A0A0B2;
