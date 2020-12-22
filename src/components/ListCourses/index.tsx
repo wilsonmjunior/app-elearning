@@ -11,9 +11,10 @@ export interface Course {
 
 interface ListCoursesProps {
   courses: Course[]
+  isDelete: boolean | false
 }
 
-const ListCourses = ({ courses }: ListCoursesProps) => {
+const ListCourses = ({ courses, isDelete }: ListCoursesProps) => {
   return (
     <Container>
       {
@@ -22,6 +23,7 @@ const ListCourses = ({ courses }: ListCoursesProps) => {
             key={course.id}
             nameCourse={course.name}
             numberClass={10}
+            isDelete={isDelete}
           />
         ))
       }

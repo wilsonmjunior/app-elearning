@@ -1,10 +1,13 @@
 import React from 'react'
-import { TouchableOpacity } from 'react-native'
+import Feather from 'react-native-vector-icons/Feather'
 
 import Math from '../../images/Math.svg'
+
+import { normalize } from '../../utils/responsive'
+
 import { Label } from '../CardLesson/styles'
 
-import { Container, Section, Text } from './styles'
+import { Container, DeleteButton, Section, Text } from './styles'
 
 interface CardProps {
   nameCourse: string
@@ -17,9 +20,9 @@ const CardCourse = ({ nameCourse, numberClass, isDelete }: CardProps) => {
     <Container>
       {
         isDelete && (
-          <TouchableOpacity>
-            <Text>delete</Text>
-          </TouchableOpacity>
+          <DeleteButton>
+            <Feather name="trash" size={normalize(16)} color="#C4C4D1"/>
+          </DeleteButton>
         )
       }
       <Section>
