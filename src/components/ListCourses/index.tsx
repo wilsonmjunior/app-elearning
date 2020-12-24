@@ -1,6 +1,8 @@
 import React from 'react'
 
 import CardCourse from '../CardCourse'
+import { Text } from '../CardCourse/styles'
+import ShimmerLoading from '../ShimmerLoading'
 
 import { Container } from './styles'
 
@@ -11,12 +13,15 @@ export interface Course {
 
 interface ListCoursesProps {
   courses: Course[]
-  isDelete: boolean | false
+  isDelete?: boolean | false
+  loading: boolean
 }
 
-const ListCourses = ({ courses, isDelete }: ListCoursesProps) => {
+const ListCourses = ({ courses, isDelete, loading }: ListCoursesProps) => {
   return (
     <Container>
+      <ShimmerLoading loading={loading} />
+
       {
         courses.map((course) => (
           <CardCourse
