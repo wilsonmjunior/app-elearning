@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 
 import { rem } from '../../utils/responsive'
 
-export const Container = styled.View``
+export const Container = styled.ScrollView``
 
 export const Content = styled.View`
   margin-top: ${rem(-50)};

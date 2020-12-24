@@ -10,13 +10,13 @@ interface Props {
 
 type FunctionSetData<T> = (data: T[]) => void
 type FunctioSendData<T> = (data: T) => void
-type GetProps<T> = [T[], string, boolean, boolean, Function, FunctionSetData<T>]
+type GetProps<T> = [T[], boolean, string, boolean, Function, FunctionSetData<T>]
 type PostProps<T> = [AxiosResponse<T> | undefined, boolean, string | undefined, FunctioSendData<T>]
 
 export function useGet<T> ({ url, skip }: Props): GetProps<T> {
   const [data, setData] = useState<T[]>([])
   const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [loaded, setLoaded] = useState(false)
   const [refreshIndex, setRefreshIndex] = useState(0)
 
@@ -35,9 +35,11 @@ export function useGet<T> ({ url, skip }: Props): GetProps<T> {
 
       api.get(url).then(response => {
         if (!canceled) {
-          setData(response.data)
-          setLoading(false)
-          setLoaded(true)
+          setTimeout(() => {
+            setData(response.data)
+            setLoading(false)
+            setLoaded(true)
+          }, 10000)
         }
       })
         .catch(error => {
@@ -57,8 +59,8 @@ export function useGet<T> ({ url, skip }: Props): GetProps<T> {
 
   return [
     data,
-    error,
     loading,
+    error,
     loaded,
     refresh,
     setData

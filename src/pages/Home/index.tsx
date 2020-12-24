@@ -1,17 +1,16 @@
 import React from 'react'
-import { ActivityIndicator } from 'react-native'
 
 import Header from '../../components/Header'
 import ListCourses, { Course } from '../../components/ListCourses'
+import ShimmerLoading from '../../components/ShimmerLoading'
 import Title from '../../components/Title'
 
 import { useGet } from '../../hooks/api'
-import { normalize } from '../../utils/responsive'
 
 import { Container, Content, HeaderContent, Label } from './styles'
 
 const Home = () => {
-  const [data, loading] = useGet<Course>({ url: 'courses' })
+  const [data, loading, error] = useGet<Course>({ url: 'courses' })
 
   return (
     <Container>
@@ -23,11 +22,7 @@ const Home = () => {
           <Label>43 cursos</Label>
         </HeaderContent>
 
-        {
-          !loading
-            ? <ListCourses courses={data} />
-            : <ActivityIndicator size="large" color="#6548A3" style={{ marginTop: normalize(100) }} />
-        }
+        <ListCourses courses={data} loading={loading} />
       </Content>
     </Container>
   )
