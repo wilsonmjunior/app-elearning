@@ -27,6 +27,7 @@
         "parameters": 2
       }
     }],
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "no-use-before-define": ["error", { "functions": true, "classes": true }]
   }
 }
